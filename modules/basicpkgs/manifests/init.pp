@@ -36,7 +36,20 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class basicpkgs {
-	$install_pkgs = ['vim-enhanced', 'nc']
+	$install_pkgs = [
+		'vim-enhanced',
+	 	'nc',
+	#	'sysfutils',
+		'glibc.i686',
+		'libstdc++.i686',
+	#	'compat-libstdc++.x86_64',
+	#	'compat-libstdc++.i686',
+		'net-snmp',
+		'telnet',
+		'iptraf',
+	#	'iftop',
+		'ksh',
+	]
 	$remove_pkgs = ['cups']	
 
 	package { $install_pkgs: ensure => 'installed' }	

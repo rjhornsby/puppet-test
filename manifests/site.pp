@@ -7,26 +7,26 @@ $splunk_os = '2.6-x86_64'
 $format = 'rpm'
 
 class { 'ntp':
-	servers => ['time.apple.com'],
+  servers => ['time.apple.com'],
 }
 
-class { 'splunk':	
-	install => 'forwarder',
-	install_source => "http://download.splunk.com/products/splunk/releases/$version/$product1/$platform/$product2-$version-$build-$platform-$splunk_os.$format",
-	forward_server => ['splunk.localhost.localdomain:9997'],
+class { 'splunk':
+  install        => 'forwarder',
+  install_source => "http://download.splunk.com/products/splunk/releases/${version}/${product1}/${platform}/${product2}-${version}-${build}-${platform}-${splunk_os}.${format}",
+  forward_server => ['splunk.localhost.localdomain:9997'],
 }
 
 class { 'netbackup':
-	servers => ['server01', 'server02', 'server03'],
+  servers => ['server01', 'server02', 'server03'],
 }
 
 class { 'selinux':
-	mode => 'permissive',
+  mode => 'permissive',
 }
 
 include ntp
 include disable-services
-include basicpkgs	
+include basicpkgs
 include splunk
 include netbackup
 include selinux
