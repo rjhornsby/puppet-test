@@ -1,0 +1,5 @@
+CLIENT_NAME = <%= @hostname %>
+CONNECT_OPTIONS = localhost 1 0 2
+<% @servers.each do |server| -%>
+SERVER = <%= server %>
+<% end -%>

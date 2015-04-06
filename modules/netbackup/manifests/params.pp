@@ -1,0 +1,3 @@
+class netbackup::params {
+	$servers	= []
+}
