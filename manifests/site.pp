@@ -20,6 +20,13 @@ class { 'netbackup':
 	servers => ['server01', 'server02', 'server03'],
 }
 
-#include basicpkgs	
+class { 'selinux':
+	mode => 'permissive',
+}
+
+include ntp
+include disable-services
+include basicpkgs	
 include splunk
 include netbackup
+include selinux

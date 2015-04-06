@@ -8,3 +8,4 @@ modules/puppi/
 modules/splunk/
 modules/staging/
 modules/stdlib/
+modules/selinux/
